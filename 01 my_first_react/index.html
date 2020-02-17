@@ -1,0 +1,49 @@
+<html>
+    <head>  
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>  
+    </head>  
+    <body>  
+        <div class="js_begin_react"></div>    
+        <script type="text/babel">
+            
+
+            class Hello extends React.Component {
+                
+                constructor() {
+                    super();
+                    this.state = {
+                        message: 'учиться - это хорошо',
+                        count: 0
+                    }
+                    this.editMessage = this.editMessage.bind(this);
+                }
+
+                editMessage() {
+                    this.setState({
+                        message: 'Учиться - это хорошо!'
+                    });
+                }
+                
+                render() {
+                    return <div>
+                        <h1>Привет, это я ... react.</h1>
+                        <span>{this.state.message}</span>
+                        <div>
+                            <button onClick={this.editMessage}>edit text</button>
+                        </div> 
+                    </div>;
+                }
+            }
+
+            var htmlContent = document.querySelector('.js_begin_react');
+            ReactDOM.render(
+                <Hello message="Я прост в освоении."/>, 
+                htmlContent
+            );
+
+
+        </script>
+    </body>  
+</html>
