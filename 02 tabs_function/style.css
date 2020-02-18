@@ -1,0 +1,45 @@
+.tabs__head {
+    background-color: #61A0D7;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    --transition: 0.4s;
+    border-right: 1px solid #4f83b1;
+    border-left: 1px solid #4f83b1;
+    border-bottom: 1px solid #4f83b1;
+    background-image: url(img/closed.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 15px;
+    background-position-x: 98%;
+}
+
+div.tabs__head.active {
+    background-image: url(img/opened.png);
+}
+
+div.tabs__head.active + .tabs__data {
+    display: block;
+}
+
+.tabs__data {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.tabs_wrp > div {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #4f83b1;
+}
+
+.tabs__head_code {
+    width: 70px;
+    display: inline-block;
+}

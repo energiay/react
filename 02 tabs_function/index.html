@@ -1,0 +1,125 @@
+<html>
+    <head>  
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>  
+    <body>
+        
+        <div class="tabs_wrp react_begin"></div>
+        <div>
+            <button class="js_begin">button</button>
+        </div>
+        
+        <script type="text/babel">
+
+            var btn = document.querySelector('.js_begin');
+            btn.addEventListener('click', function (e) {
+                console.log(e);
+            });
+
+            const listOfSubdivisions = [
+                {
+                    id: "1",
+                    code: "002",
+                    name: "Подразделение 2",
+                    listOfPositions: [
+                        {
+                            id: "4",
+                            name: "Начальник отдела",
+                            collaboratorFullname: "Иван Иванов"
+                        },
+                        {
+                            id: "2",
+                            name: "Заместитель начальника отдела",
+                            collaboratorFullname: "Алексей Горин"
+                        },
+                        {
+                            id: "3",
+                            name: "Программист",
+                            collaboratorFullname: "Василий Круглов"
+                        },
+                    ]
+                },
+                {
+                    id: "5",
+                    code: "001",
+                    name: "Подразделение 1",
+                    listOfPositions: [
+                        {
+                            id: "6",
+                            name: "Начальник отдела",
+                            collaboratorFullname: "Михаил Александров"
+                        },
+                        {
+                            id: "7",
+                            name: "Заместитель начальника отдела",
+                            collaboratorFullname: "Константин Сыров"
+                        },
+                        {
+                            id: "8",
+                            name: "Программист",
+                            collaboratorFullname: "Сергей Лаптев"
+                        },
+                    ]
+                },
+                {
+                    id: "9",
+                    code: "003",
+                    name: "Подразделение 3",
+                    listOfPositions: [
+                        {
+                            id: "10",
+                            name: "Начальник отдела",
+                            collaboratorFullname: "Ольга Андреева"
+                        },
+                        {
+                            id: "11",
+                            name: "Заместитель начальника отдела",
+                            collaboratorFullname: "Маргарита Васина"
+                        },
+                        {
+                            id: "12",
+                            name: "Программист",
+                            collaboratorFullname: "Алексей Веселов"
+                        },
+                    ]
+                }
+            ];
+
+            function Tabs( {subs} ) {
+                var [getActive, setActive] = React.useState(null);
+                var [getState, setState] = React.useState(null);
+                
+                var openTab = function (e) {
+                    var elem = e.target;
+                    while (elem.dataset.index == undefined) {
+                        elem = elem.parentNode;
+                    }
+                    
+                    setActive( parseInt(elem.dataset.index) );
+                };
+
+                return (
+                    <div>
+                        {subs.sort((a, b) => { return (a.code < b.code ? -1 : 1); }).map((elem, i) => (
+                            <div key={i} data-index={i}>
+                                <div className={`tabs__head${i === getActive ? ' active' : ''}`} onClick={openTab}>
+                                    <span className="tabs__head_code" onClick={openTab}>{elem.code}</span> 
+                                    <span className="tabs__head_name" onClick={openTab}>{elem.name}</span>
+                                </div>
+                                <div className="tabs__data">
+                                    <p>{elem.name}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<Tabs subs={listOfSubdivisions} />, document.querySelector('.react_begin'));
+
+        </script>
+    </body>  
+</html>
