@@ -1,23 +1,15 @@
 <html>
     <head>  
-        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>  
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
-        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <script src="js/react.development.js"></script>  
+        <script src="js/react-dom.development.js"></script>  
+        <script src="js/babel.min.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>  
     <body>
         
-        <div class="tabs_wrp react_begin"></div>
-        <div>
-            <button class="js_begin">button</button>
-        </div>
+        <div class="react_begin"></div>
         
         <script type="text/babel">
-
-            var btn = document.querySelector('.js_begin');
-            btn.addEventListener('click', function (e) {
-                console.log(e);
-            });
 
             const listOfSubdivisions = [
                 {
@@ -88,36 +80,104 @@
                 }
             ];
 
+
             function Tabs( {subs} ) {
-                var [getActive, setActive] = React.useState(null);
-                var [getState, setState] = React.useState(null);
+                var [open, setOpen] = React.useState(null);
+                var [visited, setVisited] = React.useState([]);
                 
-                var openTab = function (e) {
-                    var elem = e.target;
-                    while (elem.dataset.index == undefined) {
+                /**
+                 * Поиск индекса элемента в DOM (поиск вверх по дереву не более 10 узлов)
+                 *
+                 *  object elem
+                 *
+                 *  return integer || null
+                 */
+                var findIndex = function (elem) {
+                    var MAX_COUNT = 10;
+                    for (var i = 0; i < MAX_COUNT; i++) {
+                        if (elem.dataset.index !== undefined) {
+                            return parseInt(elem.dataset.index); 
+                        }
                         elem = elem.parentNode;
                     }
+
+                    return null;
+                }
+
+                /**
+                 * Обработчик на клик:
+                 *  - делаем вкладку активной
+                 *  - ставим признак, что вкладка посещена
+                 *
+                 *  object event
+                 *
+                 *  return undefined
+                 */
+                var openTab = function (event) {
+                    var index = findIndex(event.target);
+                    if (index ==  open) {
+                        setOpen(null);
+                        return;
+                    }
                     
-                    setActive( parseInt(elem.dataset.index) );
+                    setOpen(index);
+                    visited[index] = true;
                 };
 
+                /**
+                 * Получить класс для активной вкладки
+                 *
+                 *  number index
+                 *
+                 *  return string
+                 */
+                var getActivClass = function (index) {
+                    if (index === open) {
+                        return 'active'
+                    }
+                    
+                    return '';
+                };
+
+                /**
+                 * Получить класс для статуса посещенности 
+                 *
+                 *  number index
+                 *
+                 *  return string
+                 */
+                var getStateClass = function (index) {
+                    if (visited[index]) {
+                        return 'visited'
+                    }
+                    
+                    return '';
+                };
+
+
                 return (
-                    <div>
+                    <div className="tabs_wrp">
                         {subs.sort((a, b) => { return (a.code < b.code ? -1 : 1); }).map((elem, i) => (
                             <div key={i} data-index={i}>
-                                <div className={`tabs__head${i === getActive ? ' active' : ''}`} onClick={openTab}>
+                                <div className={`tabs__head ${getActivClass(i)}`} onClick={openTab}>
                                     <span className="tabs__head_code" onClick={openTab}>{elem.code}</span> 
                                     <span className="tabs__head_name" onClick={openTab}>{elem.name}</span>
+                                    <span className={`tabs__head_visit ${getStateClass(i)}`}></span>
                                 </div>
                                 <div className="tabs__data">
-                                    <p>{elem.name}</p>
+                                    {elem.listOfPositions.map((pos, j) => (
+                                        <div key={i + '_' + j}>
+                                            <span className="tabs__data_pos_name">{pos.name}</span>
+                                            <span className="tabs__data_fullname">{pos.collaboratorFullname}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         ))}
                     </div>
                 );
             }
-
+            
             ReactDOM.render(<Tabs subs={listOfSubdivisions} />, document.querySelector('.react_begin'));
 
         </script>

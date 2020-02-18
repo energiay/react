@@ -7,7 +7,6 @@
     text-align: left;
     outline: none;
     font-size: 15px;
-    --transition: 0.4s;
     border-right: 1px solid #4f83b1;
     border-left: 1px solid #4f83b1;
     border-bottom: 1px solid #4f83b1;
@@ -33,7 +32,11 @@ div.tabs__head.active + .tabs__data {
     overflow: hidden;
 }
 
-.tabs_wrp > div {
+.tabs__data > div {
+    padding: 4px 0;
+}
+
+.tabs_wrp {
     width: 600px;
     margin: 0 auto;
     border: 1px solid #4f83b1;
@@ -42,4 +45,35 @@ div.tabs__head.active + .tabs__data {
 .tabs__head_code {
     width: 70px;
     display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.tabs__data_pos_name {
+    width: 230px;
+    display: inline-block;
+}
+
+.tabs__data_fullname {
+    margin-left: 8px;
+}
+
+.tabs__head_name {
+    width: 420px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: text-bottom;
+}
+
+.tabs__head_visit {
+    border: 1px solid #fff;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #ff0000;
+    vertical-align: text-bottom;
+}
+
+.tabs__head_visit.visited {
+    background: #76b14d;
 }
