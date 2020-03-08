@@ -5,7 +5,7 @@
   "author": "iTulinov.ru",
   "scripts": {
     "dev": "webpack-dev-server --hot --open",
-    "build": "webpack"
+    "prod": "webpack"
   },
   "dependencies": {
     "react": "^16.5.0",

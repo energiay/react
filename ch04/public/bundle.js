@@ -28614,24 +28614,53 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var React = __webpack_require__(3);
 
-var Clock = /*#__PURE__*/function (_React$component) {
-  _inherits(Clock, _React$component);
+var Clock = /*#__PURE__*/function (_React$Component) {
+  _inherits(Clock, _React$Component);
 
-  function Clock() {
+  function Clock(props) {
+    var _this;
+
     _classCallCheck(this, Clock);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Clock).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Clock).call(this, props));
+
+    _this.begin();
+
+    _this.state = {
+      currentTime: _this.getTime()
+    };
+    return _this;
   }
 
   _createClass(Clock, [{
+    key: "getTime",
+    value: function getTime() {
+      var date = new Date();
+      var sHours = date.getHours().toString().length == 1 ? '0' + date.getHours() : '' + date.getHours();
+      var sMins = date.getMinutes().toString().length == 1 ? '0' + date.getMinutes() : '' + date.getMinutes();
+      var sSecs = date.getSeconds().toString().length == 1 ? '0' + date.getSeconds() : '' + date.getSeconds();
+      return sHours + ':' + sMins + ':' + sSecs;
+    }
+  }, {
+    key: "begin",
+    value: function begin() {
+      var _this2 = this;
+
+      setInterval(function () {
+        _this2.setState({
+          currentTime: _this2.getTime()
+        });
+      }, 1000);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return React.createElement("div", null, "test");
+      return React.createElement("div", null, this.state.currentTime);
     }
   }]);
 
   return Clock;
-}(React.component);
+}(React.Component);
 
 module.exports = Clock;
 
