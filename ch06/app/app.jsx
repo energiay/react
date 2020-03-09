@@ -3,7 +3,6 @@ var React = require('react');
 var Area = require('./components/Area.jsx');
 var Content = require('./components/Content.jsx');
  
- 
 ReactDOM.render(
     <div>
         <Area/>
