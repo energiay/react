@@ -12,7 +12,7 @@ class Drawer extends Component {
     return links.map((link, index) => {
       return (
         <li key={index}>
-          <a>Link {link}</a>
+          <a href="javascript:">Link {link}</a>
         </li>
       )
     })
