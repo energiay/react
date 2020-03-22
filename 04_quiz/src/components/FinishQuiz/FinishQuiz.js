@@ -34,6 +34,7 @@ const FinishQuiz = props => {
                 }
             </ul>
             <div>Верно отвечено: {countSuccess} из {props.quiz.length}</div>
+            {/* <Link to='/react/quiz/'> */}
             <Link to='/'>
                 <Button onReloadClick={props.onReloadClick} type="primary">Повторить</Button>
             </Link>

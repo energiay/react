@@ -9,6 +9,7 @@ class App extends React.Component {
     return (
       <Layout>
 		  <Switch>
+		  	{/* <Route exact path='/react/quiz/'> */}
 		  	<Route exact path='/'>
 				<Quiz />
 			</Route>
