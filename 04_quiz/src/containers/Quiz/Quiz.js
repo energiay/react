@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Classes from './Quiz.module.css';
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishQuiz from '../../components/FinishQuiz/FinishQuiz';
+import {withRouter} from 'react-router-dom'
 
 class Quiz extends Component {
 
@@ -55,16 +56,22 @@ class Quiz extends Component {
 
     onAnswerClickHendler = (answerId) => {
         const newState = {...this.state}
-        const question = {...newState.quiz[this.state.activeQuestion]};
+        
+        let activeQuestion = newState.activeQuestion;
+        if (this.props.match.params.number) {
+            activeQuestion = this.props.match.params.number;
+        }
+        
+        const question = {...newState.quiz[activeQuestion]};
 
         // если ответ правильный
         if (question.rightAnswer === answerId) {            
             question.answerState = {[answerId]: 'success'};
-            newState.quiz[this.state.activeQuestion] = question;
+            newState.quiz[activeQuestion] = question;
         } else {
             // ответ не правильный
             question.answerState = {[answerId]: 'error'};
-            newState.quiz[this.state.activeQuestion] = question;
+            newState.quiz[activeQuestion] = question;
         }
         
         this.setState(newState);
@@ -79,32 +86,56 @@ class Quiz extends Component {
             return;
         }
 
-        this.nextQuestion(newState)
+        if (!this.props.match.params.number) {
+            this.nextQuestion(newState)
+        }
+
     }
 
     questionsFinished() {
         return this.state.activeQuestion + 1 === this.state.quiz.length
     }
 
+    getQuestion(url) {
+        var arrResult = url.match(/\d+/) || [];
+        var iResult = parseInt(arrResult.join(''));
+        if (!isNaN(iResult) && iResult !== this.state.activeQuestion) {
+            this.setState({
+                isFinish: false,
+                activeQuestion: iResult
+            });
+        }
+    }
+
 
     render() {
+        let resultPage = this.state.isFinish;
+        if (this.props.isFinish !== undefined) {
+            resultPage = this.props.isFinish
+        }
+
+        let activeQuestion = this.state.activeQuestion;
+        if (this.props.match.params.number) {
+            activeQuestion = parseInt(this.props.match.params.number);
+        }
+
         return (
             <div className={Classes.Quiz}>
                 <div className={Classes.QuizWrapper}>
                     <h1>Опросник:</h1>
                     
                     {
-                        (this.state.isFinish) 
+                        (resultPage) 
                             ?   <FinishQuiz 
                                     quiz={this.state.quiz}
                                     onReloadClick={this.onReloadClickHendler.bind(this)}
                                 />
                             :   <ActiveQuiz 
-                                    answers={this.state.quiz[this.state.activeQuestion].answers}
-                                    question={this.state.quiz[this.state.activeQuestion].question}
-                                    answerState={this.state.quiz[this.state.activeQuestion].answerState}
+                                    answers={this.state.quiz[activeQuestion].answers}
+                                    question={this.state.quiz[activeQuestion].question}
+                                    answerState={this.state.quiz[activeQuestion].answerState}
                                     quizLength={this.state.quiz.length}
-                                    activeQuestion={this.state.activeQuestion + 1}
+                                    activeQuestion={activeQuestion + 1}
                                     onAnswerClick={this.onAnswerClickHendler}
                                 />
                     }
@@ -116,4 +147,4 @@ class Quiz extends Component {
     }
 }
 
-export default Quiz
+export default withRouter(Quiz)

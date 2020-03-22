@@ -9,7 +9,6 @@ const Button = props => {
 
     return (
     <button
-        onClick={props.onClick}
         className={cls.join(' ')}
         disabled={props.disabled}
         onClick={ () => props.onReloadClick() }
