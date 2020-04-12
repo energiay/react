@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 57 (101010) - https://sketch.com -->
+    <title>D0F3329C-CC19-47AC-9E97-9133970CFCBB</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M10,0 L12.9389263,5.95491503 L19.5105652,6.90983006 L14.7552826,11.545085 L15.8778525,18.0901699 L10,15 L4.12214748,18.0901699 L5.24471742,11.545085 L0.489434837,6.90983006 L7.06107374,5.95491503 L10,0 Z M10,3.5 L8.08969793,7.37069477 L3.81813264,7.99138954 L6.90906632,11.0043052 L6.17939586,15.2586105 L10,13.25 L13.8206041,15.2586105 L13.0909337,11.0043052 L16.1818674,7.99138954 L11.9103021,7.37069477 L10,3.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons-/-24-/-star-/-outline">
+            <g id="Group" transform="translate(2.000000, 3.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape"></g>
+                <g id="sdo-/-color-/-grey" mask="url(#mask-2)" fill="#005aab">
+                    <g transform="translate(-2.000000, -3.000000)" id="Rectangle-Copy-4">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

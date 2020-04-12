@@ -1,0 +1,239 @@
+
+body {
+    background-color: #eff3f4;
+}
+
+.my_account {
+    padding-top: 17px;
+    /* border: 1px solid; */
+    /* margin-left: 296px; */
+    /* margin-top: 56px; */
+}
+
+
+.my_account__block  {
+    margin: 17px;
+    margin-top: 0;
+    background-color: #fff;
+    color: #2d2d2d;
+    font-family: ArialMT, Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.my_account__block .my_account__block_slide_experience {
+    overflow: visible;
+}
+
+.my_account__block_small {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.my_account__block_slide {
+    margin: 0;
+}
+
+.my_account__block input {
+    display: none;
+}
+
+
+.my_account__block > .my_account__block_title,
+.my_account__block  > label > .my_account__block_content,
+.my_account__block > .my_account__block_content {
+    padding: 16px 16px;
+}
+
+.my_account__block_small > label > .my_account__block_content,
+.my_account__block_small > .my_account__block_content {
+    padding: 0;
+}
+
+.my_account__block .my_account__block_separator,
+.my_account__block > .tabs > .my_account__block_separator {
+    height: 1px;
+    background-color: #eff3f4;
+}
+
+.my_account__block_title  {
+    /* height: 50px; */
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.my_account__block > label > .my_account__block_content,
+.my_account__block > .my_account__block_content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.content_personal {
+    flex: 1 3 100%;
+}
+
+.my_account__block_content .content_img {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+}
+
+/* .my_account__block_small .content_img {
+    width: 50px;
+    height: 35px;
+} */
+
+.my_account__block_small .content_img {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.my_account__block_content .content_img.img_person {
+    background-image: url('../img/person.png');
+}
+
+.my_account__block_content .content_img.img_birthday {
+    background-image: url('../img/icons-24-birthday.svg');
+}
+
+.my_account__block_content .content_img.img_phone {
+    background-image: url('../img/icons-24-phone.svg');
+}
+
+.my_account__block_content .content_img.img_email {
+    background-image: url('../img/email.png');
+}
+
+.my_account__block_content .content_img.img_work {
+    background-image: url('../img/icons-24-work.svg');
+}
+
+.my_account__block_content .content_img.img_location {
+    background-image: url('../img/icons-24-location.svg');
+}
+
+.my_account__block_content .content_img.img_education {
+    background-image: url('../img/icons-24-education.svg');
+}
+
+.my_account__block_content .content_img.img_flag {
+    background-image: url('../img/icons-24-flag.svg');
+}
+
+.my_account__block_content .content_img.img_boss {
+    background-image: url('../img/boss.png');
+}
+
+.my_account__block_content .content_img.img_experience:before {
+    content: '';
+    background-color: #cacaca;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top:7.5px;
+    left:7.5px;
+}
+
+.my_account__block_content .content_img.img_experience_end:before {
+    content: '';
+    background-color: #005aab;
+}
+
+.my_account__block_content .content_img.img_experience:after {
+    content: '';
+    background-color: #cacaca;
+    width: 2px;    
+    height: 32px;    
+    position: absolute;
+    top: 22.5px;
+    left: 11.5px;
+}
+
+.my_account__block_content .content_img.img_experience_end:after {
+    width: 0;
+}
+
+.my_account__block_content .content_personal__top {
+    font-size: 16px;
+    line-height: normal;
+}
+
+.my_account__block_small .content_personal__top {
+    color: #808080;
+    font-size: 12px;
+}
+
+.my_account__block_content .content_personal__bottom {
+    font-size: 12px;
+    line-height: normal;
+}
+
+.content_personal__top + .content_personal__bottom {
+    margin-top: 8px;
+}
+
+.my_account__block_small .content_personal__bottom {
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.my_account__block_slide_boss .content_personal__top {
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.my_account__block_slide_boss .content_personal__bottom {
+    color: #808080;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.my_account__block_slide_experience .content_personal__top {
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.my_account__block_slide_experience .content_personal__bottom {
+    color: #808080;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.my_account__block_slide_experience .content_personal__top + .content_personal__bottom {
+    margin-top: 4px;
+}
+
+.my_account__block_slide_boss .content_img {
+    width: 35px;
+    height: 35px;
+}
+
+.my_account__block_slide > div {
+    margin-top: 16px;
+}
+
+
+
+@media screen and (max-width: 400px) {	
+    .my_account__block_content .content_personal {
+        width: 20px;
+    }
+
+    .my_account__block_small > label > .my_account__block_content .content_personal,
+    .my_account__block_small > .my_account__block_content .content_personal {
+        width: auto;
+    }
+}

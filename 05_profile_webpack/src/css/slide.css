@@ -1,0 +1,33 @@
+
+
+.slide {
+    cursor: pointer;
+}
+
+.slide:after {
+    content: '';
+    background-image: url('../img/icons-24-arrow-down.png');
+    width: 24px;
+    height: 24px;
+}
+
+#my_account__work:checked + label .slide:after,
+#my_account__flag:checked + label .slide:after,
+#my_account__boss:checked + label .slide:after,
+#my_account__education:checked + label .slide:after {
+    content: '';
+    background-image: url('../img/icons-24-arrow-up.png');
+}
+
+.slide_content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 300ms;
+}
+
+#my_account__work:checked ~ .slide_content,
+#my_account__flag:checked ~ .slide_content,
+#my_account__boss:checked ~ .slide_content,
+#my_account__education:checked ~ .slide_content {
+    max-height: 400px;
+}

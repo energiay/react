@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colors</title>
+    <script src="https://unpkg.com/redux@4.0.5/dist/redux.js"></script>
+</head>
+<body>
+
+    <script>
+        window.onload = function () {
+
+            // console.log('zhora');
+
+            var addColor = function (val) {
+                return {
+                    type: 'ADD',
+                    payload: val
+                }
+            }
+
+            var delColor = function (val) {
+                return {
+                    type: 'DEL',
+                    payload: val
+                }
+            }
+
+            var favoriteColors = function (state = [], action) {
+                switch(action.type) {
+                    case 'ADD': {
+                        return [...state, action.payload]
+                    }
+                    case 'DEL': {
+                        return state.filter((item) => {
+                            return item !== action.payload
+                        })
+                    }
+                    default: return [];
+                }
+            }
+
+            var render = function () {
+                console.log( state.getState() )
+            }
+
+            var state = Redux.createStore(favoriteColors);
+            
+            state.subscribe(render);
+            
+            // применение
+            state.dispatch( addColor('blue') )
+            state.dispatch( addColor('red') )
+            state.dispatch( addColor('#cc003d') )
+            
+            setTimeout(function () {
+                state.dispatch( delColor('red') )
+            }, 2000)
+            
+            state.dispatch( addColor('#fff') )
+
+        }
+        
+    </script>
+    
+</body>
+</html>

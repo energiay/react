@@ -1,0 +1,40 @@
+/* Базовый контейнер табов */
+.tabs {
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Прячем чекбоксы */
+.tabs > input {
+	display: none;
+	position: absolute;
+}
+
+/* Стили переключателей вкладок (табов) */
+.tabs > label {
+    padding: 10px 16px 12px 16px;
+    font-size: 14px;
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Стили для активной вкладки */
+.tabs > input:checked + label {
+    color: #005aab;
+    border-bottom: 3px solid #005aab;
+}
+
+/* Стили секций с содержанием */
+.tabs ~ .my_account__content > .content_tab {
+	display: none;
+	margin: 0 0 5px;
+	line-height: 1.5;
+    color: #383838;
+    min-height: 300px;
+    white-space: normal;
+}
+
+.tabs ~ .my_account__content > .content_active {
+    display: block;
+}

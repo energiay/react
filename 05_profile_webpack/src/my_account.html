@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tabs.css">
+    <link rel="stylesheet" href="./css/slide.css">
+    
+    <div class="my_account">
+        <div class="my_account__block">
+            <div class="my_account__block_title">
+                <span>Профиль пользователя</span>
+                <img src="./img/star.svg" alt="img">
+            </div>
+            <div class="my_account__block_separator"></div>
+            <div class="my_account__block_content">
+                <div class="content_img img_person"></div>
+                <div class="content_personal">
+                    <div class="content_personal__top">Лунев Алексей Владимирович</div>
+                    <div class="content_personal__bottom">Продавец</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="my_account__block">
+            <div class="tabs js_tabs">
+                <input id="tab1" type="radio" name="tabs" checked>
+                <label for="tab1">Персональные данные</label>
+                
+                <input id="tab2" type="radio" name="tabs">
+                <label for="tab2">Оценка</label>
+                
+                <input id="tab3" type="radio" name="tabs">
+                <label for="tab3">Обучение</label>
+            </div>    
+            <div class="my_account__block_separator"></div>
+            <div class="my_account__content">
+                <div id="content-tab1" class="content_tab content_active">
+                    <div>
+                        <div class="my_account__block my_account__block_small">
+                            <div class="my_account__block_content">
+                                <div class="content_img img_birthday"></div>
+                                <div class="content_personal">
+                                    <div class="content_personal__top">Дата рождения</div>
+                                    <div class="content_personal__bottom">2 августа</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            <div class="my_account__block_content">
+                                <div class="content_img img_phone"></div>
+                                <div class="content_personal">
+                                    <div class="content_personal__top">Вн. телефон</div>
+                                    <div class="content_personal__bottom">8519710</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            <div class="my_account__block_content">
+                                <div class="content_img img_email"></div>
+                                <div class="content_personal">
+                                    <div class="content_personal__top">Эл. почта</div>
+                                    <div class="content_personal__bottom">ALunev@sportmaster.ru</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            
+                            <input id="my_account__work" type="checkbox">
+                            <label for="my_account__work">
+                                <div class="my_account__block_content slide">
+                                    <div class="content_img img_work"></div>
+                                    <div class="content_personal">
+                                        <div class="content_personal__top">Стаж в компании</div>
+                                        <div class="content_personal__bottom">1,5 г.</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="slide_content">
+                                
+                                <div class="my_account__block my_account__block_small my_account__block_slide my_account__block_slide_experience">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img img_experience"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">Продавец</div>
+                                            <div class="content_personal__bottom">16.10.2014 • СМ_БалЦОВ20_5073</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my_account__block my_account__block_small my_account__block_slide my_account__block_slide_experience">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img img_experience"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">Продавец</div>
+                                            <div class="content_personal__bottom">16.10.2014 • СМ_БалЦОВ20_5073</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my_account__block my_account__block_small my_account__block_slide my_account__block_slide_experience">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img img_experience img_experience_end"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">Продавец 1 разряда</div>
+                                            <div class="content_personal__bottom">19.12.2014 • СМ_БалЦОВ20_5073</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            <div class="my_account__block_content">
+                                <div class="content_img img_location"></div>
+                                <div class="content_personal">
+                                    <div class="content_personal__top">Готовность к релокации</div>
+                                    <div class="content_personal__bottom">Готов работать в другом магазине своего округа</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            
+                            <input id="my_account__education" type="checkbox">
+                            <label for="my_account__education">
+                                <div class="my_account__block_content slide">
+                                    <div class="content_img img_education"></div>
+                                    <div class="content_personal">
+                                        <div class="content_personal__top">Образование</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="slide_content">
+                                
+                                <div class="my_account__block my_account__block_small my_account__block_slide">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">2003</div>
+                                            <div class="content_personal__bottom">
+                                                Санкт-Петербургский государственный университет экономики и финансов, г. Санкт-Петербург
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my_account__block my_account__block_small my_account__block_slide">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__bottom">
+                                                Факультет «Экономики труда и управления персоналом»; Cпециальность: «Управление персоналом»; Квалификация: «Менеджер» (Диплом с отличием).
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my_account__block my_account__block_small my_account__block_slide">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">2003–2014</div>
+                                            <div class="content_personal__bottom">
+                                                Посещение многочисленных семинаров и тренингов по продажам и работе с клиентами («Холодные звонки», «Продажи по методу SPIN», «Активные продажи», «Продажи услуг»,  «Работа с возражениями» и т.д.)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            
+                            <input id="my_account__flag" type="checkbox">
+                            <label for="my_account__flag">
+                                <div class="my_account__block_content slide">
+                                    <div class="content_img img_flag"></div>
+                                    <div class="content_personal">
+                                        <div class="content_personal__top">Достижения</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="slide_content">
+                                <div class="my_account__block my_account__block_small my_account__block_slide">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__bottom">
+                                                Водительское удостоверение категории «В», авто туризм; гребля на байдарках
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_account__block_separator"></div>
+                        <div class="my_account__block my_account__block_small">
+                            
+                            <input id="my_account__boss" type="checkbox">
+                            <label for="my_account__boss">
+                                <div class="my_account__block_content slide">
+                                    <div class="content_img"></div>
+                                    <div class="content_personal">
+                                        <div class="content_personal__top">Руководитель</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="slide_content">
+                                
+                                <div class="my_account__block my_account__block_small my_account__block_slide my_account__block_slide_boss">
+                                    <div class="my_account__block_content">
+                                        <div class="content_img img_boss"></div>
+                                        <div class="content_personal">
+                                            <div class="content_personal__top">Погорелый Антон Викторович</div>
+                                            <div class="content_personal__bottom">Директор магазина</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div> 
+                <div id="content-tab2" class="content_tab">
+                    Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка Оценка 
+                </div> 
+                <div id="content-tab3" class="content_tab">
+                    Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение Обучение 
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
