@@ -21,6 +21,8 @@ class MenuContainer extends React.Component {
     }
 
     toggleMenu() {
+        
+        console.log('clicked');
         this.setState({
             visible: !this.state.visible
         });
@@ -28,6 +30,7 @@ class MenuContainer extends React.Component {
 
 
     render() {
+        console.log('MenuContainer');
         return (
             <div>
                 <div>
